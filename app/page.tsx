@@ -17,8 +17,8 @@ export default function Page() {
     <>
       <PortfolioNavbar />
       <GarmentHero />
-      <TrustBar />
       <SampleToggleSection />
+      <TrustBar />
       <ProblemSolutionSection />
       <SocialProofSection />
       <ComparisonSection />
