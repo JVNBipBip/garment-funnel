@@ -8,10 +8,10 @@ export const BlanksVsCustomSection = () => {
             <div className="mx-auto max-w-6xl px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-medium text-neutral-900 font-figtree mb-4">
-                        Blanks or Custom? Start Anywhere. Grow Into Everything.
+                        Two paths. One partner. Zero compromises.
                     </h2>
                     <p className="text-lg text-neutral-500 font-figtree max-w-2xl mx-auto">
-                        Whether you're testing your first graphic tee or developing a fully custom silhouette, we're the only partner you need.
+                        Whether you're launching your first graphic tee or developing a signature silhouette from scratch, we scale with you.
                     </p>
                 </div>
 
@@ -33,14 +33,14 @@ export const BlanksVsCustomSection = () => {
 
                         <h3 className="text-2xl font-semibold text-neutral-900 mb-4">The Blanks Path</h3>
                         <div className="inline-flex max-w-fit items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-medium mb-8">
-                            Best for: First-time brands, merch drops, testing the market
+                            Ideal for: First drops, merch lines, market testing
                         </div>
 
                         <div className="space-y-6 flex-grow mb-10">
                             <div>
                                 <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">How it works</h4>
                                 <p className="text-neutral-700 font-figtree">
-                                    Choose from our premium blank styles → Add your branding (labels, tags, prints) → Ship to your door.
+                                    Pick from our premium blank catalogue → Add your branding (labels, tags, prints) → We ship to your door, ready to sell.
                                 </p>
                             </div>
                             <div>
@@ -52,7 +52,7 @@ export const BlanksVsCustomSection = () => {
                         </div>
 
                         <button className="w-full h-14 rounded-xl bg-white border-2 border-neutral-200 text-neutral-900 font-medium transition-colors hover:border-neutral-900">
-                            Shop Blanks
+                            Explore Blank Catalogue
                         </button>
                     </div>
 
@@ -64,14 +64,14 @@ export const BlanksVsCustomSection = () => {
 
                         <h3 className="text-2xl font-semibold text-white mb-4">The Custom Path</h3>
                         <div className="inline-flex max-w-fit items-center px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-medium mb-8">
-                            Best for: Brands ready for unique fits, fabrics, and full design control
+                            Ideal for: Brands ready for unique fits, original fabrics, full design control
                         </div>
 
                         <div className="space-y-6 flex-grow mb-10">
                             <div>
                                 <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-2">How it works</h4>
                                 <p className="text-neutral-300 font-figtree">
-                                    Use our digital design platform → We produce custom pattern samples in 3 days → Approve and scale.
+                                    Share your vision through our design platform → We produce custom pattern samples in 3 days → Approve, refine, and scale production.
                                 </p>
                             </div>
                             <div>
@@ -83,7 +83,7 @@ export const BlanksVsCustomSection = () => {
                         </div>
 
                         <button className="w-full h-14 rounded-xl bg-emerald-500 text-white font-medium transition-colors hover:bg-emerald-600">
-                            Design Custom
+                            Start Your Custom Project
                         </button>
                     </div>
 

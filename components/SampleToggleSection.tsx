@@ -9,7 +9,7 @@ const samplePacks = [
     {
         id: "streetwear",
         name: "Streetwear Pack",
-        description: "Curated specifically for streetwear brands looking to test fit, fabric weight, and overall construction. Designed around oversized, boxy, and heavyweight silhouettes.",
+        description: "Our best-selling heavyweight silhouettes in one box. Test the oversized fit, feel the 280 GSM weight, and wash-test them before your next drop.",
         items: [
             "1× SS001 Softhand Standard Tee",
             "1× SS002 HeavyMax Oversized Tee",
@@ -20,7 +20,7 @@ const samplePacks = [
     {
         id: "essentials",
         name: "Essentials Pack",
-        description: "The perfect starting point for any brand. Classic fits and versatile weights suitable for everyday wear and printing.",
+        description: "The fastest way to evaluate our core range. Classic fits and versatile weights built for screen printing, DTG, and embroidery.",
         items: [
             "1× SS001 Softhand Standard Tee",
             "1× LS001 Classic Longsleeve",
@@ -38,10 +38,10 @@ export const SampleToggleSection = () => {
             <div className="mx-auto max-w-5xl px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-medium text-neutral-900 mb-4 font-figtree">
-                        Find the perfect foundation
+                        Feel the difference before you commit
                     </h2>
                     <p className="text-lg text-neutral-500 max-w-2xl mx-auto font-figtree">
-                        Choose a pre-packaged sample pack for a quick overview of our core pieces, or order specific styles, colors, and sizes directly.
+                        Grab a curated sample pack to test our fabrics hands-on, or build a custom order with the exact styles, colours, and sizes you need. No minimums.
                     </p>
                     <div className="mt-6 inline-flex items-center justify-center px-4 py-2 rounded-full bg-neutral-100 text-sm font-medium text-neutral-600">
                         <span className="mr-2">✨</span>
@@ -134,7 +134,7 @@ export const SampleToggleSection = () => {
                                             <div className="w-20 h-20 bg-neutral-100 rounded-full flex items-center justify-center mb-8">
                                                 <PenTool className="w-8 h-8 text-neutral-600" />
                                             </div>
-                                            <h3 className="text-3xl font-medium text-neutral-900 mb-4">Build Your Own Pack</h3>
+                                            <h3 className="text-3xl font-medium text-neutral-900 mb-4">Need something specific?</h3>
                                             <p className="text-neutral-500 text-lg leading-relaxed mb-10 max-w-xl">
                                                 Need something specific? Order individual styles, colors, and sizes directly with no minimums required. Perfect for brands with precise requirements.
                                             </p>
@@ -159,7 +159,7 @@ export const SampleToggleSection = () => {
 
                                             <button className="inline-flex justify-center items-center h-14 px-8 rounded-full bg-neutral-900 text-white font-medium text-base transition-transform hover:scale-[1.02] active:scale-[0.98] group">
                                                 <span className="flex items-center gap-2">
-                                                    Start Custom Order Survey
+                                                    Tell Us What You Need
                                                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                                                 </span>
                                             </button>

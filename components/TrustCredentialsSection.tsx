@@ -27,10 +27,10 @@ export const TrustCredentialsSection = () => {
 
                     <div className="order-1 lg:order-2">
                         <h2 className="text-3xl md:text-4xl font-medium text-neutral-900 font-figtree mb-6">
-                            A Partner You Can Trust. <br /> Not Just a Factory.
+                            We're not a middleman. <br /> We're your manufacturing partner.
                         </h2>
                         <p className="text-lg text-neutral-600 leading-relaxed font-figtree mb-10">
-                            Stop guessing if your overseas supplier will actually deliver what you paid for. We operate a verifiable, direct manufacturing facility based in North America. Visit us, chat with our team, and see exactly how your garments are made.
+                            Every garment is made in our own facility in Montreal, Canada. No anonymous factories. No supply chain mystery. You can visit us, meet our team, and watch your order come to life on the production floor.
                         </p>
 
                         <div className="grid grid-cols-2 gap-8 mb-12">
@@ -38,36 +38,36 @@ export const TrustCredentialsSection = () => {
                                 <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
                                     <ShieldCheck className="w-5 h-5 text-emerald-600" />
                                 </div>
-                                <h4 className="font-semibold text-neutral-900 mb-2">Quality Assured</h4>
+                                <h4 className="font-semibold text-neutral-900 mb-2">Batch-Level QC</h4>
                                 <p className="text-sm text-neutral-500 leading-relaxed">
-                                    Rigorous QC protocols ensure sizing and fabric consistency across all batches.
+                                    Every batch is weight-tested, wash-tested, and size-checked before it ships. Consistency you can count on.
                                 </p>
                             </div>
                             <div>
                                 <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mb-4">
                                     <Globe className="w-5 h-5 text-blue-600" />
                                 </div>
-                                <h4 className="font-semibold text-neutral-900 mb-2">Global Shipping</h4>
+                                <h4 className="font-semibold text-neutral-900 mb-2">Ships Worldwide</h4>
                                 <p className="text-sm text-neutral-500 leading-relaxed">
-                                    Serving brands actively in CA, US, UK, AU, and NZ with reliable logistics.
+                                    Active in CA, US, UK, AU, and NZ with reliable logistics and full tracking on every order.
                                 </p>
                             </div>
                             <div>
                                 <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center mb-4">
                                     <MapPin className="w-5 h-5 text-orange-600" />
                                 </div>
-                                <h4 className="font-semibold text-neutral-900 mb-2">Physical HQ</h4>
+                                <h4 className="font-semibold text-neutral-900 mb-2">Come Visit Us</h4>
                                 <p className="text-sm text-neutral-500 leading-relaxed">
-                                    424E-350 rue de Louvain Ouest, Montreal, Quebec, Canada. H2N 2E8.
+                                    424E-350 rue de Louvain Ouest, Montreal, QC, Canada H2N 2E8. Our door is open.
                                 </p>
                             </div>
                             <div>
                                 <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mb-4">
                                     <Leaf className="w-5 h-5 text-green-600" />
                                 </div>
-                                <h4 className="font-semibold text-neutral-900 mb-2">Responsibly Made</h4>
+                                <h4 className="font-semibold text-neutral-900 mb-2">Ethically Produced</h4>
                                 <p className="text-sm text-neutral-500 leading-relaxed">
-                                    Ethically sourced and produced with the highest environmental standards.
+                                    Responsibly sourced materials and fair labour practices — because your brand's reputation depends on it.
                                 </p>
                             </div>
                         </div>

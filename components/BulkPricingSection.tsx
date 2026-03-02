@@ -39,10 +39,10 @@ export const BulkPricingSection = () => {
             <div className="mx-auto max-w-5xl px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-medium text-neutral-900 font-figtree mb-4">
-                        Transparent Pricing. No Surprises.
+                        Know your costs before you commit
                     </h2>
                     <p className="text-lg text-neutral-500 font-figtree">
-                        See your costs upfront. No hidden fees or gatekeeping.
+                        No hidden fees, no price negotiations, no "request a quote" gatekeeping. Just clear numbers.
                     </p>
                 </div>
 
@@ -94,7 +94,7 @@ export const BulkPricingSection = () => {
                 <div className="flex items-center gap-3 bg-blue-50/50 text-blue-800 text-sm p-4 rounded-xl mb-12 border border-blue-100">
                     <Info className="w-5 h-5 text-blue-400" />
                     <p className="font-figtree">
-                        <span className="font-semibold">Custom cut-and-sew?</span> Pricing depends on complexity. Order a sample pack and we'll quote your exact design.
+                        <span className="font-semibold">Need fully custom cut-and-sew?</span> Pricing depends on your design complexity. Grab a sample pack first and we'll quote your exact specs — no obligation.
                     </p>
                 </div>
 

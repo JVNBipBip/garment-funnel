@@ -8,10 +8,10 @@ export const ComparisonSection = () => {
             <div className="mx-auto max-w-5xl px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-medium text-neutral-900 font-figtree mb-4">
-                        Not All Blanks Are Created Equal
+                        The quality gap is real
                     </h2>
                     <p className="text-lg text-neutral-500 font-figtree">
-                        See why brands switch to Garment System and never look back.
+                        See exactly why 500+ brands switched to Garment System — and why they never went back.
                     </p>
                 </div>
 
@@ -38,8 +38,8 @@ export const ComparisonSection = () => {
                         },
                         {
                             feature: "Fabric Feel",
-                            generic: "Thin, rough",
-                            premium: "Thick, soft, substantial"
+                            generic: "Thin, stiff, scratchy",
+                            premium: "Dense, soft, substantial"
                         },
                         {
                             feature: "Shrinkage",
@@ -58,8 +58,8 @@ export const ComparisonSection = () => {
                         },
                         {
                             feature: "Brand Perception",
-                            generic: '"Looks like merch"',
-                            premium: '"Looks like an $80 retail tee"'
+                            generic: '"This feels like a free giveaway tee"',
+                            premium: '"Wait, this is YOUR brand? It feels like $80 retail."'
                         }
                     ].map((row, i) => (
                         <div key={i} className="grid grid-cols-12 border-b border-neutral-100 last:border-0 hover:bg-neutral-50/50 transition-colors">

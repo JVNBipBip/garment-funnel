@@ -3,19 +3,19 @@
 import { XCircle, CheckCircle2 } from "lucide-react"
 
 const problems = [
-    "Blanks that shrink after one wash",
-    "500-unit minimums just to test the market",
-    "Suppliers who ghost after you pay",
-    "Cheap fabric that kills your brand's reputation",
-    "Months-long wait times from overseas factories"
+    "Blanks that shrink a full size after one wash",
+    "500-unit minimums just to test a single colourway",
+    "Overseas suppliers who disappear after payment clears",
+    "Thin, see-through fabric that screams 'cheap merch'",
+    "8–12 week lead times that kill your launch schedule"
 ]
 
 const solutions = [
-    "Pre-shrunk, heavyweight fabrics (220–300 GSM)",
-    "No minimums. Start with a $29 sample pack",
-    "Real team in Montreal. 24-hour response guarantee",
-    "Premium quality that commands premium prices",
-    "3-day samples. 2–3 week production. NA shipping"
+    "Pre-shrunk, heavyweight fabric (220–300 GSM) that holds its shape",
+    "Zero minimums — sample a single unit if you want",
+    "A real team in Montreal with a 24-hour response guarantee",
+    "Premium hand-feel your customers will actually comment on",
+    "3-day samples. 2–3 week production. North American shipping"
 ]
 
 export const ProblemSolutionSection = () => {
@@ -24,10 +24,10 @@ export const ProblemSolutionSection = () => {
             <div className="mx-auto max-w-7xl px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-medium text-neutral-900 font-figtree mb-4">
-                        Sound Familiar?
+                        Tired of gambling on blanks?
                     </h2>
                     <p className="text-lg text-neutral-500 font-figtree max-w-2xl mx-auto">
-                        We built Garment System because we were tired of the industry standard. This is how we fix it.
+                        Most suppliers make big promises and deliver thin fabric. We built Garment System to be the opposite.
                     </p>
                 </div>
 

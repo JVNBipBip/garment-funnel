@@ -17,31 +17,31 @@ type FAQSectionProps = {
 const defaultFAQs: FAQItem[] = [
   {
     question: "What's included in the sample pack?",
-    answer: "Each curated pack includes our core silhouettes, such as the Softhand Standard Tee (220 GSM) and the HeavyMax Oversized Tee (280 GSM), depending on the pack you choose. They are intended for you to test fit, fabric weight, and construction."
+    answer: "Each pack is curated around a specific use case. Depending on the pack, you'll get a mix of our core silhouettes — like the Softhand Standard Tee (220 GSM) and the HeavyMax Oversized Tee (280 GSM) — so you can test the fit, weight, and construction hands-on before ordering in bulk."
   },
   {
     question: "How long does sample shipping take?",
-    answer: "We process and ship sample packs within 3 business days. Depending on your location (CA, US, UK, AU, NZ), delivery typically takes between 3 to 7 business days."
+    answer: "We ship sample packs within 3 business days. After that, delivery takes 3–7 business days depending on your location (we actively ship to CA, US, UK, AU, and NZ)."
   },
   {
     question: "Is the sample pack cost credited to my bulk order?",
-    answer: "Yes! When you place your first bulk order (minimum $300), we'll credit the $29/$39 sample pack cost toward your total."
+    answer: "Absolutely. Place your first bulk order of $300 or more and we'll credit the full cost of your sample pack toward your total. Think of it as a free test drive."
   },
   {
     question: "What fabric weights do you offer?",
-    answer: "We focus on premium, heavyweight fabrics. Our tees range from 220 GSM to 300 GSM, and our hoodies range from 400 GSM to 500 GSM, using 100% combed ringspun cotton."
+    answer: "We specialise in premium, heavyweight fabrics. Our tees range from 220 to 300 GSM, and our hoodies from 400 to 500 GSM — all made with 100% combed ringspun cotton for a dense, retail-grade hand-feel."
   },
   {
     question: "What are your minimum order quantities (MOQ)?",
-    answer: "For our premium blank catalog, there are NO minimums. You can order exactly what you need. If you choose our fully custom cut-and-sew path, our MOQs remain highly startup-friendly compared to industry standards. Contact us for a custom quote."
+    answer: "For our blank catalogue, there are no minimums at all — order as few as one unit. For fully custom cut-and-sew, our MOQs are among the lowest in the industry and designed to be startup-friendly. Reach out and we'll give you an exact number for your project."
   },
   {
     question: "Can your blanks be screen printed or embroidered?",
-    answer: "Absolutely. Our tight-knit, heavyweight fabrics are specifically engineered to hold crisp screen prints, DTG, and dense embroidery without warping or bleeding."
+    answer: "Yes — and they'll look incredible. Our tight-knit, heavyweight fabric is specifically engineered to hold crisp screen prints, sharp DTG detail, and dense embroidery without warping, bleeding, or stretching."
   },
   {
     question: "Are you a manufacturer or a middleman?",
-    answer: "We are a direct manufacturer based in Montreal, Canada. When you work with Garment System, you are dealing directly with the team overseeing the production floor."
+    answer: "We are a direct manufacturer based in Montreal, Canada. No middlemen, no brokers. When you work with Garment System, you're talking directly to the people running the production floor — and you're welcome to visit us in person."
   }
 ]
 

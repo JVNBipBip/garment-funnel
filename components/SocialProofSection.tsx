@@ -31,9 +31,9 @@ const testimonials: Testimonial[] = [
                 MS
             </div>
         ),
-        title: "Midnight Studio scaled their seasonal drop with zero minimums and zero stress.",
+        title: "Midnight Studio sold out their seasonal drop in 48 hours — on blanks they ordered with zero minimums.",
         features: ["Heavyweight 280 GSM", "Custom Tags", "Pre-Shrunk"],
-        quote: "The 280 GSM tees are heavier than what I was paying $12/unit for elsewhere. Incredible value.",
+        quote: "The 280 GSM tees are heavier than what I was paying $12/unit for elsewhere. My customers literally DM me asking where I source my blanks now.",
         attribution: "Alex M., Founder, Midnight Studio",
         accentColor: "#10b981", // Emerald
         stats: {
@@ -53,10 +53,10 @@ const testimonials: Testimonial[] = [
                 SH
             </div>
         ),
-        title: "Sensory House relies on Garment System to keep their core collection perpetually in stock.",
+        title: "Sensory House cut their restock lead time from 12 weeks to 14 days by switching to Garment System.",
         features: ["Direct Communication", "Fast Turnaround", "Consistent Fit"],
-        quote: "They responded to my first email in 2 hours. My last overseas supplier took 3 weeks. The peace of mind is worth it.",
-        attribution: "Sarah J., Operations, Sensory House",
+        quote: "They responded to my first email in 2 hours. My last overseas supplier took 3 weeks just to confirm an order. The peace of mind alone is worth the switch.",
+        attribution: "Sarah J., Operations Lead, Sensory House",
         accentColor: "#3b82f6", // Blue
         stats: {
             shippingTime: "5 Days",
@@ -75,9 +75,9 @@ const testimonials: Testimonial[] = [
                 CM
             </div>
         ),
-        title: "Curated by Muse eliminated customer returns by switching to our premium blanks.",
+        title: "Curated by Muse cut their return rate nearly in half after switching to our premium blanks.",
         features: ["Wash Tested", "Premium Construction", "Retail Ready"],
-        quote: "Our return rate dropped significantly since switching. Customers literally comment on the fabric quality now.",
+        quote: "Our return rate dropped 45% since making the switch. Customers literally leave reviews saying the fabric quality surprised them.",
         attribution: "David L., CEO, Curated by Muse",
         accentColor: "#f59e0b", // Amber
         stats: {

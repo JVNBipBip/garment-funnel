@@ -8,10 +8,10 @@ export const ProcessSection = () => {
             <div className="mx-auto max-w-7xl px-8">
                 <div className="text-center mb-20">
                     <h2 className="text-3xl md:text-4xl font-medium text-white font-figtree mb-4">
-                        How It Works — 3 Simple Steps
+                        From sample to scale in three steps
                     </h2>
                     <p className="text-lg text-neutral-400 font-figtree">
-                        The path forward is dead simple. Reduce decision fatigue and start building.
+                        No complicated onboarding. No sales calls. Just order, test, and grow.
                     </p>
                 </div>
 
@@ -24,19 +24,19 @@ export const ProcessSection = () => {
                             step: "01",
                             icon: <PackageOpen className="w-8 h-8 text-neutral-300" />,
                             title: "Order Your Sample Pack",
-                            description: "Pick your styles. We ship within 3 business days. Touch, feel, wash-test the quality yourself."
+                            description: "Pick your styles and sizes. We ship within 3 business days — you'll have fabric in hand by the end of the week."
                         },
                         {
                             step: "02",
                             icon: <Sparkles className="w-8 h-8 text-neutral-300" />,
                             title: "Test & Compare",
-                            description: "Put our blanks next to whatever you're using now. Check the weight, the feel, the print quality."
+                            description: "Hold our blanks next to whatever you're sourcing now. Check the weight, the stitching, the drape. Wash them. We dare you."
                         },
                         {
                             step: "03",
                             icon: <Building2 className="w-8 h-8 text-neutral-300" />,
-                            title: "Place Your Bulk Order",
-                            description: "Ready to go? Your sample pack cost is credited to your first bulk order. Scale up when ready."
+                            title: "Scale Your Order",
+                            description: "Convinced? Your sample cost gets credited toward your first bulk order. Go from 50 units to 5,000 with the same quality."
                         }
                     ].map((item, i) => (
                         <div key={i} className="relative z-10 flex flex-col items-center text-center">
