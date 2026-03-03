@@ -4,9 +4,9 @@ import { TrustBar } from "@/components/TrustBar"
 import { SampleToggleSection } from "@/components/SampleToggleSection"
 import { ProblemSolutionSection } from "@/components/ProblemSolutionSection"
 import { SocialProofSection } from "@/components/SocialProofSection"
+import { ListicleSection } from "@/components/ListicleSection"
 import { ComparisonSection } from "@/components/ComparisonSection"
 import { ProcessSection } from "@/components/ProcessSection"
-import { BulkPricingSection } from "@/components/BulkPricingSection"
 import { BlanksVsCustomSection } from "@/components/BlanksVsCustomSection"
 import { TrustCredentialsSection } from "@/components/TrustCredentialsSection"
 import { FAQSection } from "@/components/FAQSection"
@@ -21,9 +21,9 @@ export default function Page() {
       <TrustBar />
       <ProblemSolutionSection />
       <SocialProofSection />
+      <ListicleSection />
       <ComparisonSection />
       <ProcessSection />
-      <BulkPricingSection />
       <BlanksVsCustomSection />
       <TrustCredentialsSection />
       <FAQSection />
