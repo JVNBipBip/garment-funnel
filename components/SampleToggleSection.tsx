@@ -43,7 +43,7 @@ export const SampleToggleSection = () => {
                         Feel the difference before you commit
                     </h2>
                     <p className="text-lg text-neutral-500 max-w-2xl mx-auto font-figtree">
-                        Grab a curated sample pack to test our fabrics hands-on, or build a custom order with the exact styles, colours, and sizes you need. No minimums.
+                        Grab a curated sample pack to test the Garment Gap hands-on.
                     </p>
                     <div className="mt-6 inline-flex items-center justify-center px-4 py-2 rounded-full bg-neutral-100 text-sm font-medium text-neutral-600">
                         <span className="mr-2">✨</span>
@@ -89,7 +89,7 @@ export const SampleToggleSection = () => {
                                             </div>
                                             <h3 className="text-3xl font-medium text-neutral-900 mb-4">Let us guide your selection</h3>
                                             <p className="text-neutral-500 text-lg leading-relaxed mb-10 max-w-xl">
-                                                Not sure where to start? Fill out our quick inquiry form so we can understand your brand's needs. Our algorithm will then guide you to the perfect sample pack or curate a custom selection of pieces specifically for you.
+                                                Not sure where to start? Fill out our quick inquiry form so we can understand your brand's needs.
                                             </p>
 
                                             <div className="bg-neutral-50 rounded-2xl p-6 md:p-8 w-full mb-10 text-left border border-neutral-100">

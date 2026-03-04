@@ -19,7 +19,7 @@ export default function Page() {
       <TrustBar />
       {/* <ProblemSolutionSection /> */}
       <SocialProofSection />
-      <ListicleSection />
+      {/* <ListicleSection /> */}
       {/* <ComparisonSection /> */}
       <ProcessSection />
       {/* <BlanksVsCustomSection /> */}

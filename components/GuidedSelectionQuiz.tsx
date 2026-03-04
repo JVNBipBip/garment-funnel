@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, ArrowLeft, Check, Sparkles, X } from "lucide-react"
+import { ArrowRight, ArrowLeft, Check, Sparkles, X, Loader2 } from "lucide-react"
 import {
     Dialog,
     DialogContent,
@@ -101,8 +101,35 @@ export function GuidedSelectionQuiz({ open, onOpenChange }: GuidedSelectionQuizP
     const [step, setStep] = useState(0)
     const [answers, setAnswers] = useState<Record<string, Answer>>({})
     const [direction, setDirection] = useState<1 | -1>(1)
+    const [analyzing, setAnalyzing] = useState(false)
+    const [analyzePhase, setAnalyzePhase] = useState(0)
 
     const totalSteps = questions.length
+
+    const analyzeMessages = [
+        "Reviewing your answers…",
+        "Matching fabrics & weights…",
+        "Building your recommendation…",
+    ]
+
+    function startAnalyzing(finalAnswers: Record<string, Answer>) {
+        setAnalyzing(true)
+        setAnalyzePhase(0)
+
+        // Cycle through phases then navigate
+        setTimeout(() => setAnalyzePhase(1), 1200)
+        setTimeout(() => setAnalyzePhase(2), 2400)
+        setTimeout(() => {
+            const packId = getRecommendedPackId(finalAnswers)
+            onOpenChange(false)
+            router.push(`/results?pack=${packId}`)
+            // Reset after navigation
+            setTimeout(() => {
+                setAnalyzing(false)
+                setAnalyzePhase(0)
+            }, 300)
+        }, 3600)
+    }
 
     function handleSelect(questionId: string, value: string, multiSelect?: boolean) {
         const newAnswers = { ...answers }
@@ -123,10 +150,7 @@ export function GuidedSelectionQuiz({ open, onOpenChange }: GuidedSelectionQuizP
             const nextStep = step + 1
             setTimeout(() => {
                 if (nextStep >= totalSteps) {
-                    // Last question answered — navigate to results
-                    const packId = getRecommendedPackId(newAnswers)
-                    onOpenChange(false)
-                    router.push(`/results?pack=${packId}`)
+                    startAnalyzing(newAnswers)
                 } else {
                     setDirection(1)
                     setStep(nextStep)
@@ -138,9 +162,7 @@ export function GuidedSelectionQuiz({ open, onOpenChange }: GuidedSelectionQuizP
     function handleNext() {
         const nextStep = step + 1
         if (nextStep >= totalSteps) {
-            const packId = getRecommendedPackId(answers)
-            onOpenChange(false)
-            router.push(`/results?pack=${packId}`)
+            startAnalyzing(answers)
         } else {
             setDirection(1)
             setStep(nextStep)
@@ -156,6 +178,8 @@ export function GuidedSelectionQuiz({ open, onOpenChange }: GuidedSelectionQuizP
         setStep(0)
         setAnswers({})
         setDirection(1)
+        setAnalyzing(false)
+        setAnalyzePhase(0)
     }
 
     function handleClose() {
@@ -184,7 +208,7 @@ export function GuidedSelectionQuiz({ open, onOpenChange }: GuidedSelectionQuizP
                             <Sparkles className="w-4 h-4 text-neutral-600" />
                         </div>
                         <span className="text-sm font-medium text-neutral-900">
-                            Question {step + 1} of {totalSteps}
+                            {analyzing ? "Analyzing…" : `Question ${step + 1} of ${totalSteps}`}
                         </span>
                     </div>
                     <button
@@ -201,7 +225,7 @@ export function GuidedSelectionQuiz({ open, onOpenChange }: GuidedSelectionQuizP
                         <motion.div
                             className="h-full bg-[#156d95] rounded-full"
                             initial={false}
-                            animate={{ width: `${((step + 1) / totalSteps) * 100}%` }}
+                            animate={{ width: analyzing ? "100%" : `${((step + 1) / totalSteps) * 100}%` }}
                             transition={{ duration: 0.3, ease: "easeInOut" }}
                         />
                     </div>
@@ -210,7 +234,58 @@ export function GuidedSelectionQuiz({ open, onOpenChange }: GuidedSelectionQuizP
                 {/* Content */}
                 <div className="px-6 pb-6 min-h-[400px] flex flex-col">
                     <AnimatePresence mode="wait" custom={direction}>
-                        {currentQuestion && (
+                        {analyzing ? (
+                            <motion.div
+                                key="analyzing"
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="flex-1 flex flex-col items-center justify-center text-center py-12"
+                            >
+                                <div className="w-16 h-16 rounded-full bg-[#156d95]/10 flex items-center justify-center mb-8">
+                                    <Loader2 className="w-8 h-8 text-[#156d95] animate-spin" />
+                                </div>
+
+                                <h3 className="text-2xl font-medium text-neutral-900 font-figtree mb-3">
+                                    Analyzing your preferences
+                                </h3>
+
+                                <div className="space-y-3 mt-6 w-full max-w-xs">
+                                    {analyzeMessages.map((msg, i) => (
+                                        <motion.div
+                                            key={msg}
+                                            initial={{ opacity: 0, y: 8 }}
+                                            animate={{
+                                                opacity: analyzePhase >= i ? 1 : 0.3,
+                                                y: analyzePhase >= i ? 0 : 8,
+                                            }}
+                                            transition={{ duration: 0.4, ease: "easeOut" }}
+                                            className="flex items-center gap-3"
+                                        >
+                                            <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
+                                                analyzePhase > i
+                                                    ? "bg-emerald-500"
+                                                    : analyzePhase === i
+                                                    ? "bg-[#156d95]"
+                                                    : "bg-neutral-200"
+                                            }`}>
+                                                {analyzePhase > i ? (
+                                                    <Check className="w-3 h-3 text-white" />
+                                                ) : analyzePhase === i ? (
+                                                    <Loader2 className="w-3 h-3 text-white animate-spin" />
+                                                ) : null}
+                                            </div>
+                                            <span className={`text-sm transition-colors duration-300 ${
+                                                analyzePhase >= i ? "text-neutral-900" : "text-neutral-400"
+                                            }`}>
+                                                {msg}
+                                            </span>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        ) : currentQuestion && (
                             <motion.div
                                 key={step}
                                 custom={direction}
@@ -293,6 +368,7 @@ export function GuidedSelectionQuiz({ open, onOpenChange }: GuidedSelectionQuizP
                         )}
                     </AnimatePresence>
                 </div>
+
             </DialogContent>
         </Dialog>
     )
