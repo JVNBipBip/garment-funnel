@@ -97,15 +97,15 @@ export const SampleToggleSection = () => {
                                                 <ol className="space-y-4 text-sm text-neutral-600">
                                                     <li className="flex gap-3">
                                                         <span className="flex-shrink-0 w-6 h-6 rounded-full bg-neutral-200 text-neutral-700 flex items-center justify-center font-medium text-xs">1</span>
-                                                        <p>Tell us about your brand and what you're looking for.</p>
+                                                        <p>Answer a few quick questions about your brand and what you need.</p>
                                                     </li>
                                                     <li className="flex gap-3">
                                                         <span className="flex-shrink-0 w-6 h-6 rounded-full bg-neutral-200 text-neutral-700 flex items-center justify-center font-medium text-xs">2</span>
-                                                        <p>Our team reviews your inquiry and guides you to the right pieces.</p>
+                                                        <p>Our algorithm matches you with the right fabrics, fits, and weights.</p>
                                                     </li>
                                                     <li className="flex gap-3">
                                                         <span className="flex-shrink-0 w-6 h-6 rounded-full bg-neutral-200 text-neutral-700 flex items-center justify-center font-medium text-xs">3</span>
-                                                        <p>We build a custom invoice for your specific sample order.</p>
+                                                        <p>Choose a recommended sample pack or hand-pick individual pieces tailored to your line.</p>
                                                     </li>
                                                 </ol>
                                             </div>
