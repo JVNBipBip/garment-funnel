@@ -1,4 +1,3 @@
-import { PortfolioNavbar } from "@/components/PortfolioNavbar"
 import { GarmentHero } from "@/components/GarmentHero"
 import { TrustBar } from "@/components/TrustBar"
 import { SampleToggleSection } from "@/components/SampleToggleSection"
@@ -15,7 +14,6 @@ import { Footer } from "@/components/Footer"
 export default function Page() {
   return (
     <>
-      <PortfolioNavbar />
       <GarmentHero />
       <SampleToggleSection />
       <TrustBar />

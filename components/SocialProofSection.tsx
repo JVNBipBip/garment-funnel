@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { ArrowRight } from "lucide-react"
+import { SampleChoiceDialog } from "./SampleChoiceDialog"
 
 type Testimonial = {
     id: string
@@ -175,6 +177,7 @@ export const SocialProofSection = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [direction, setDirection] = useState(0)
     const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+    const [choiceOpen, setChoiceOpen] = useState(false)
     const autoPlayRef = useRef<NodeJS.Timeout | null>(null)
 
     const currentStudy = testimonials[currentIndex]
@@ -297,6 +300,15 @@ export const SocialProofSection = () => {
                                         {currentStudy.attribution}
                                     </footer>
                                 </blockquote>
+
+                                <button
+                                    onClick={() => setChoiceOpen(true)}
+                                    className="inline-flex items-center gap-2 h-12 px-7 rounded-full text-white font-medium text-sm transition-all hover:scale-[1.02] active:scale-[0.98] shadow-sm hover:shadow-md mt-8 group"
+                                    style={{ backgroundColor: currentStudy.accentColor }}
+                                >
+                                    Order Your Sample Pack
+                                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                </button>
                             </motion.div>
                         </AnimatePresence>
 
@@ -397,6 +409,7 @@ export const SocialProofSection = () => {
                 </motion.div>
             </div>
 
+            <SampleChoiceDialog open={choiceOpen} onOpenChange={setChoiceOpen} />
         </div>
     )
 }

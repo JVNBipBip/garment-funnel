@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { ArrowRight, Package, ClipboardList } from "lucide-react"
+import { GuidedSelectionQuiz } from "./GuidedSelectionQuiz"
 
 const samplePacks = [
     {
@@ -32,6 +33,7 @@ const samplePacks = [
 
 export const SampleToggleSection = () => {
     const [activeTab, setActiveTab] = useState("custom")
+    const [quizOpen, setQuizOpen] = useState(false)
 
     return (
         <section className="w-full py-24 bg-white" id="samples">
@@ -108,12 +110,17 @@ export const SampleToggleSection = () => {
                                                 </ol>
                                             </div>
 
-                                            <button className="inline-flex justify-center items-center h-14 px-8 rounded-full bg-neutral-900 text-white font-medium text-base transition-transform hover:scale-[1.02] active:scale-[0.98] group">
+                                            <button
+                                                onClick={() => setQuizOpen(true)}
+                                                className="inline-flex justify-center items-center h-14 px-8 rounded-full bg-[#156d95] text-white font-medium text-base transition-all hover:bg-[#156d95]/90 hover:scale-[1.02] active:scale-[0.98] shadow-sm hover:shadow-md group"
+                                            >
                                                 <span className="flex items-center gap-2">
-                                                    Tell Us What You Need
+                                                    Find Your Curated Samples
                                                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                                                 </span>
                                             </button>
+
+                                            <GuidedSelectionQuiz open={quizOpen} onOpenChange={setQuizOpen} />
                                         </div>
                                     </TabsContent>
                                 </motion.div>
@@ -156,9 +163,9 @@ export const SampleToggleSection = () => {
 
                                                     <div className="flex items-center justify-between mt-auto pt-4 border-t border-neutral-100">
                                                         <span className="text-lg font-medium text-neutral-900">{pack.price}</span>
-                                                        <button className="flex items-center text-sm font-medium text-neutral-900 hover:text-neutral-600 transition-colors">
+                                                        <button className="inline-flex items-center gap-1.5 h-9 px-5 rounded-full bg-[#156d95] text-white text-sm font-medium transition-all hover:bg-[#156d95]/90 hover:scale-[1.02] active:scale-[0.98] shadow-sm">
                                                             Purchase
-                                                            <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                                            <ArrowRight className="w-3.5 h-3.5" />
                                                         </button>
                                                     </div>
                                                 </div>

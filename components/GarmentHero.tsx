@@ -3,10 +3,12 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import { SampleChoiceDialog } from "./SampleChoiceDialog"
 
 export const GarmentHero = () => {
   const [isVisible, setIsVisible] = useState(false)
   const [typingComplete, setTypingComplete] = useState(false)
+  const [choiceOpen, setChoiceOpen] = useState(false)
 
   useEffect(() => {
     setIsVisible(true)
@@ -65,12 +67,16 @@ export const GarmentHero = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex items-center gap-4"
             >
-              <button className="inline-flex justify-center items-center h-12 px-6 rounded-full bg-neutral-900 text-white font-medium text-sm transition-transform hover:scale-[1.02] active:scale-[0.98] group">
+              <button
+                onClick={() => setChoiceOpen(true)}
+                className="inline-flex justify-center items-center h-12 px-6 rounded-full bg-[#156d95] text-white font-medium text-sm transition-all hover:bg-[#156d95]/90 hover:scale-[1.02] active:scale-[0.98] shadow-sm hover:shadow-md group"
+              >
                 <span className="flex items-center gap-2">
                   Order Your Sample Pack
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </span>
               </button>
+              <SampleChoiceDialog open={choiceOpen} onOpenChange={setChoiceOpen} />
             </motion.div>
           </div>
 
@@ -81,9 +87,8 @@ export const GarmentHero = () => {
               transition={{ duration: 1, delay: 0.3 }}
               className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-neutral-100"
             >
-              {/* Placeholder for Hero Image - In a real scenario we'd use Next/Image */}
               <div className="absolute inset-0 flex items-center justify-center text-neutral-400 font-mono text-sm bg-neutral-200/50">
-                [Premium Hero Image of Garments]
+                [Video Sales Letter]
               </div>
             </motion.div>
           </div>

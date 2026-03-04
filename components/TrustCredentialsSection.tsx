@@ -1,8 +1,12 @@
 "use client"
 
-import { MapPin, ShieldCheck, Leaf, Globe } from "lucide-react"
+import { useState } from "react"
+import { MapPin, ShieldCheck, Leaf, Globe, ArrowRight } from "lucide-react"
+import { SampleChoiceDialog } from "./SampleChoiceDialog"
 
 export const TrustCredentialsSection = () => {
+    const [choiceOpen, setChoiceOpen] = useState(false)
+
     return (
         <section className="w-full py-24 bg-neutral-50 border-t border-neutral-200/60 overflow-hidden">
             <div className="mx-auto max-w-7xl px-8">
@@ -72,9 +76,18 @@ export const TrustCredentialsSection = () => {
                             </div>
                         </div>
 
+                        <button
+                            onClick={() => setChoiceOpen(true)}
+                            className="inline-flex items-center gap-2 h-14 px-8 rounded-full bg-[#156d95] text-white font-medium text-base transition-all hover:bg-[#156d95]/90 hover:scale-[1.02] active:scale-[0.98] shadow-sm hover:shadow-md group"
+                        >
+                            Order Your Sample Pack
+                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        </button>
                     </div>
                 </div>
             </div>
+
+            <SampleChoiceDialog open={choiceOpen} onOpenChange={setChoiceOpen} />
         </section>
     )
 }

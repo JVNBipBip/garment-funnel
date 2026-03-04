@@ -1,8 +1,12 @@
 "use client"
 
-import { PackageOpen, Sparkles, Building2 } from "lucide-react"
+import { useState } from "react"
+import { PackageOpen, Sparkles, Building2, ArrowRight } from "lucide-react"
+import { SampleChoiceDialog } from "./SampleChoiceDialog"
 
 export const ProcessSection = () => {
+    const [choiceOpen, setChoiceOpen] = useState(false)
+
     return (
         <section className="w-full py-24 bg-neutral-50 border-t border-neutral-200">
             <div className="mx-auto max-w-7xl px-8">
@@ -53,6 +57,18 @@ export const ProcessSection = () => {
                         </div>
                     ))}
                 </div>
+
+                <div className="text-center mt-16">
+                    <button
+                        onClick={() => setChoiceOpen(true)}
+                        className="inline-flex items-center gap-2 h-14 px-8 rounded-full bg-[#156d95] text-white font-medium text-base transition-all hover:bg-[#156d95]/90 hover:scale-[1.02] active:scale-[0.98] shadow-sm hover:shadow-md group"
+                    >
+                        Get Started — Order Samples
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+                </div>
+
+                <SampleChoiceDialog open={choiceOpen} onOpenChange={setChoiceOpen} />
             </div>
         </section>
     )

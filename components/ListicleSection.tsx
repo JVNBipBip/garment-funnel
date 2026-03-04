@@ -1,6 +1,11 @@
 "use client"
 
+import { useState } from "react"
+import { ArrowRight } from "lucide-react"
+import { SampleChoiceDialog } from "./SampleChoiceDialog"
+
 export const ListicleSection = () => {
+    const [choiceOpen, setChoiceOpen] = useState(false)
     const listicleItems = [
         {
             title: "Stop killing your brand with cheap 150 GSM blanks",
@@ -58,6 +63,18 @@ export const ListicleSection = () => {
                         </div>
                     ))}
                 </div>
+
+                <div className="text-center mt-14">
+                    <button
+                        onClick={() => setChoiceOpen(true)}
+                        className="inline-flex items-center gap-2 h-14 px-8 rounded-full bg-[#156d95] text-white font-medium text-base transition-all hover:bg-[#156d95]/90 hover:scale-[1.02] active:scale-[0.98] shadow-sm hover:shadow-md group"
+                    >
+                        Order Your Sample Pack
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+                </div>
+
+                <SampleChoiceDialog open={choiceOpen} onOpenChange={setChoiceOpen} />
             </div>
         </section>
     )
