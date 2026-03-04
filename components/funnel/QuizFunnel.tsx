@@ -134,7 +134,7 @@ export const QuizFunnel = () => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-6">
+    <div className={`mx-auto px-4 sm:px-6 ${step === 7 ? "max-w-[1440px]" : "max-w-3xl"}`}>
       {step <= 5 && (
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">

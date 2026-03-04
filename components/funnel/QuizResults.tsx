@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { CheckCircle, Truck, Package, RotateCcw, ChevronDown } from "lucide-react"
+import { SizeChartDialog } from "./SizeChartDialog"
 
 type QuizState = {
   stage: string
@@ -149,7 +150,7 @@ const BundleCard = ({ bundle, index }: { bundle: any; index: number }) => {
       }`}
     >
       {/* Image area */}
-      <div className={`p-6 flex flex-col items-center justify-center relative min-h-[220px] ${bundle.image}`}>
+      <div className={`p-6 flex flex-col items-center justify-center relative min-h-[280px] sm:min-h-[320px] ${bundle.image}`}>
         <div className="absolute inset-0 bg-black/5 mix-blend-overlay" />
         <div className="relative z-10 bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-2xl text-white/90 font-medium text-sm shadow-sm border border-white/20">
           [Garment Preview]
@@ -159,14 +160,18 @@ const BundleCard = ({ bundle, index }: { bundle: any; index: number }) => {
       {/* Details */}
       <div className="p-6 flex flex-col flex-grow">
         {badge && (
-          <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 font-geist-mono w-fit ${badge.className}`}>
+          <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-2 font-geist-mono w-fit ${badge.className}`}>
             {badge.label}
           </div>
         )}
         <h3 className="text-xl font-semibold font-figtree text-neutral-900 mb-2">{bundle.title}</h3>
-        <p className="text-sm text-neutral-500 mb-6 font-figtree leading-relaxed flex-grow">{bundle.description}</p>
-        
-        <div className="space-y-2 mb-6">
+        <div className="flex items-baseline gap-2 mb-4">
+          <span className="text-neutral-400 line-through text-sm font-figtree">{bundle.originalPrice}</span>
+          <span className="text-xl font-bold font-figtree text-neutral-900">{bundle.price}</span>
+        </div>
+        <div className="text-xs text-neutral-400 font-figtree mb-4">+ Free shipping</div>
+
+        <div className="space-y-1.5 mb-5 flex-grow">
           {bundle.items.map((item: string, i: number) => (
             <div key={i} className="text-sm text-neutral-800 font-medium font-figtree flex items-center gap-2">
               <span className="w-1 h-1 rounded-full bg-neutral-400 block shrink-0" />
@@ -175,14 +180,11 @@ const BundleCard = ({ bundle, index }: { bundle: any; index: number }) => {
           ))}
         </div>
 
-        <div className="mb-5">
-          <div className="flex items-baseline gap-2 mb-1">
-            <span className="text-neutral-400 line-through text-sm font-figtree">{bundle.originalPrice}</span>
-            <span className="text-xl font-bold font-figtree text-neutral-900">{bundle.price}</span>
-          </div>
-          <div className="text-xs text-neutral-400 font-figtree">+ Free shipping</div>
+        <div className="mt-auto pt-4">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-sm font-medium text-neutral-700 font-figtree">Size</span>
+          <SizeChartDialog items={bundle.items} />
         </div>
-
         <div className="mb-4 relative w-full">
           <select className="w-full h-11 px-4 rounded-xl border border-neutral-200 bg-white text-sm font-figtree text-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-900 appearance-none cursor-pointer hover:border-neutral-300 transition-colors">
             <option value="small">Small</option>
@@ -197,6 +199,7 @@ const BundleCard = ({ bundle, index }: { bundle: any; index: number }) => {
         <button className="w-full h-11 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white font-medium text-sm transition-colors font-figtree shadow-sm">
           Add to Cart
         </button>
+        </div>
       </div>
     </motion.div>
   )
@@ -206,7 +209,7 @@ export const QuizResults = ({ answers }: { answers: QuizState }) => {
   const bundles = getBundleRecommendations(answers)
 
   return (
-    <div className="py-8 max-w-7xl mx-auto px-6">
+    <div className="py-8 max-w-[1440px] mx-auto px-2 sm:px-6">
       {/* Success Banner */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
