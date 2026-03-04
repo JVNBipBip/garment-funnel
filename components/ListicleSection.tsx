@@ -25,13 +25,13 @@ export const ListicleSection = () => {
     ]
 
     return (
-        <section className="w-full py-24 bg-neutral-900 border-t border-neutral-800">
+        <section className="w-full py-24 bg-white border-t border-neutral-200">
             <div className="mx-auto max-w-4xl px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-medium text-white font-figtree mb-6 tracking-tight">
+                    <h2 className="text-3xl md:text-5xl font-medium text-neutral-900 font-figtree mb-6 tracking-tight">
                         The unfair advantage the 1% use to crush you
                     </h2>
-                    <p className="text-xl text-neutral-400 font-figtree max-w-2xl mx-auto">
+                    <p className="text-xl text-neutral-500 font-figtree max-w-2xl mx-auto">
                         We didn't just build a blank manufacturer. We built a cheat code for serious streetwear founders tired of playing amateur games.
                     </p>
                 </div>
@@ -40,18 +40,18 @@ export const ListicleSection = () => {
                     {listicleItems.map((item, index) => (
                         <div
                             key={index}
-                            className="flex flex-col sm:flex-row gap-6 p-8 rounded-2xl bg-neutral-800/30 border border-neutral-800 hover:bg-neutral-800/50 transition-colors"
+                            className="flex flex-col sm:flex-row gap-6 p-8 rounded-2xl bg-neutral-50 border border-neutral-200 hover:bg-neutral-100 transition-colors"
                         >
                             <div className="flex-shrink-0">
-                                <div className="w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center border border-emerald-500/20">
+                                <div className="w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center border border-emerald-500/20">
                                     <span className="font-bold text-xl">{index + 1}</span>
                                 </div>
                             </div>
                             <div className="pt-1">
-                                <h3 className="text-xl font-semibold text-white mb-3 tracking-tight font-figtree">
+                                <h3 className="text-xl font-semibold text-neutral-900 mb-3 tracking-tight font-figtree">
                                     {item.title}
                                 </h3>
-                                <p className="text-neutral-400 leading-relaxed font-figtree text-lg">
+                                <p className="text-neutral-500 leading-relaxed font-figtree text-lg">
                                     {item.description}
                                 </p>
                             </div>

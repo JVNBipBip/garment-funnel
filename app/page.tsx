@@ -19,12 +19,12 @@ export default function Page() {
       <GarmentHero />
       <SampleToggleSection />
       <TrustBar />
-      <ProblemSolutionSection />
+      {/* <ProblemSolutionSection /> */}
       <SocialProofSection />
       <ListicleSection />
-      <ComparisonSection />
+      {/* <ComparisonSection /> */}
       <ProcessSection />
-      <BlanksVsCustomSection />
+      {/* <BlanksVsCustomSection /> */}
       <TrustCredentialsSection />
       <FAQSection />
       <Footer />
