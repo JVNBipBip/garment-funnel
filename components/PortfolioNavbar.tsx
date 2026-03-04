@@ -23,7 +23,7 @@ const navigationLinks = [
 ] as any[]
 
 // @component: PortfolioNavbar
-export const PortfolioNavbar = () => {
+export const PortfolioNavbar = ({ minimal = false }: { minimal?: boolean }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   useEffect(() => {
@@ -70,51 +70,56 @@ export const PortfolioNavbar = () => {
                   fontWeight: "800",
                 }}
               >
-                Auralink
+                Garment
               </span>
             </button>
           </div>
 
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navigationLinks.map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => handleLinkClick(link.href)}
-                  className="text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors duration-200 relative group"
-                  style={{
-                    fontFamily: "Figtree, sans-serif",
-                    fontWeight: "400",
-                  }}
-                >
-                  <span>{link.name}</span>
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></div>
-                </button>
-              ))}
+          {!minimal && (
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-8">
+                {navigationLinks.map((link) => (
+                  <button
+                    key={link.name}
+                    onClick={() => handleLinkClick(link.href)}
+                    className="text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors duration-200 relative group"
+                    style={{
+                      fontFamily: "Figtree, sans-serif",
+                      fontWeight: "400",
+                    }}
+                  >
+                    <span>{link.name}</span>
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></div>
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
-          <div className="hidden md:block">
-            <button
-              onClick={() => handleLinkClick("#contact")}
-              className="bg-[#156d95] text-white px-[18px] rounded-full text-base font-semibold hover:bg-[#156d95]/90 transition-all duration-200 hover:rounded-2xl shadow-sm hover:shadow-md whitespace-nowrap leading-4 py-[15px]"
-              style={{
-                fontFamily: "Plus Jakarta Sans, sans-serif",
-              }}
-            >
-              <span
+          {!minimal && (
+            <div className="hidden md:block">
+              <button
+                onClick={() => handleLinkClick("#contact")}
+                className="bg-[#156d95] text-white px-[18px] rounded-full text-base font-semibold hover:bg-[#156d95]/90 transition-all duration-200 hover:rounded-2xl shadow-sm hover:shadow-md whitespace-nowrap leading-4 py-[15px]"
                 style={{
-                  fontFamily: "Figtree",
-                  fontWeight: "500",
+                  fontFamily: "Plus Jakarta Sans, sans-serif",
                 }}
               >
-                Start Free Trial
-              </span>
-            </button>
-          </div>
+                <span
+                  style={{
+                    fontFamily: "Figtree",
+                    fontWeight: "500",
+                  }}
+                >
+                  Start Free Trial
+                </span>
+              </button>
+            </div>
+          )}
 
-          <div className="md:hidden">
-            <button
+          {!minimal && (
+            <div className="md:hidden">
+              <button
               onClick={toggleMobileMenu}
               className="text-foreground hover:text-primary p-2 rounded-md transition-colors duration-200"
               aria-label="Toggle mobile menu"
@@ -122,6 +127,7 @@ export const PortfolioNavbar = () => {
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
+          )}
         </div>
       </div>
 

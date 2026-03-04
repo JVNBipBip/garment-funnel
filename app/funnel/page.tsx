@@ -10,7 +10,7 @@ export const metadata = {
 export default function FunnelPage() {
   return (
     <div className="min-h-screen flex flex-col bg-[#fafafa]">
-      <PortfolioNavbar />
+      <PortfolioNavbar minimal />
       <main className="flex-grow pt-24 pb-16">
         <QuizFunnel />
       </main>

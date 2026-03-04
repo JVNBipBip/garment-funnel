@@ -142,67 +142,49 @@ const BundleCard = ({ bundle, index }: { bundle: any; index: number }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.15, duration: 0.5 }}
-      className={`bg-white rounded-[24px] border overflow-hidden flex flex-col md:flex-row mb-10 ${
+      className={`bg-white rounded-[24px] border overflow-hidden flex flex-col h-full ${
         index === 1
           ? "border-[#156d95] shadow-md ring-1 ring-[#156d95]/20"
           : "border-neutral-200 shadow-sm"
       }`}
     >
-      {/* Left side: Image area */}
-      <div className={`md:w-5/12 p-8 flex flex-col items-center justify-center relative min-h-[350px] md:min-h-full ${bundle.image}`}>
-        {/* Placeholder for Garment Image */}
+      {/* Image area */}
+      <div className={`p-6 flex flex-col items-center justify-center relative min-h-[220px] ${bundle.image}`}>
         <div className="absolute inset-0 bg-black/5 mix-blend-overlay" />
-        <div className="relative z-10 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-2xl text-white/90 font-medium text-lg shadow-sm border border-white/20">
+        <div className="relative z-10 bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-2xl text-white/90 font-medium text-sm shadow-sm border border-white/20">
           [Garment Preview]
-        </div>
-        
-        {/* Carousel indicators (visual only) */}
-        <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-1.5 z-10">
-          <div className="w-2 h-2 rounded-full bg-white"></div>
-          <div className="w-2 h-2 rounded-full bg-white/40"></div>
-          <div className="w-2 h-2 rounded-full bg-white/40"></div>
-          <div className="w-2 h-2 rounded-full bg-white/40"></div>
-        </div>
-        
-        {/* Arrows (visual only) */}
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center text-white cursor-pointer hover:bg-white/40 transition-colors">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-        </div>
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center text-white cursor-pointer hover:bg-white/40 transition-colors">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
         </div>
       </div>
 
-      {/* Right side: Details */}
-      <div className="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
+      {/* Details */}
+      <div className="p-6 flex flex-col flex-grow">
         {badge && (
-          <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 font-geist-mono w-fit ${badge.className}`}>
+          <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 font-geist-mono w-fit ${badge.className}`}>
             {badge.label}
           </div>
         )}
-        <h3 className="text-2xl md:text-[28px] font-semibold font-figtree text-neutral-900 mb-4">{bundle.title}</h3>
-        <p className="text-[15px] text-neutral-500 mb-8 font-figtree leading-relaxed">{bundle.description}</p>
+        <h3 className="text-xl font-semibold font-figtree text-neutral-900 mb-2">{bundle.title}</h3>
+        <p className="text-sm text-neutral-500 mb-6 font-figtree leading-relaxed flex-grow">{bundle.description}</p>
         
-        <div className="space-y-3 mb-10">
+        <div className="space-y-2 mb-6">
           {bundle.items.map((item: string, i: number) => (
-            <div key={i} className="text-[15px] text-neutral-800 font-medium font-figtree flex items-center gap-2">
+            <div key={i} className="text-sm text-neutral-800 font-medium font-figtree flex items-center gap-2">
               <span className="w-1 h-1 rounded-full bg-neutral-400 block shrink-0" />
               {item}
             </div>
           ))}
         </div>
 
-        <div className="mb-6">
+        <div className="mb-5">
           <div className="flex items-baseline gap-2 mb-1">
-            <span className="text-neutral-400 line-through text-base font-figtree">{bundle.originalPrice}</span>
-            <span className="text-[22px] font-bold font-figtree text-neutral-900">{bundle.price}</span>
-            <span className="text-sm text-neutral-500 font-figtree ml-1">+ Free shipping</span>
+            <span className="text-neutral-400 line-through text-sm font-figtree">{bundle.originalPrice}</span>
+            <span className="text-xl font-bold font-figtree text-neutral-900">{bundle.price}</span>
           </div>
-          <div className="text-[13px] text-neutral-400 font-figtree">* Compared to buying the samples separately</div>
+          <div className="text-xs text-neutral-400 font-figtree">+ Free shipping</div>
         </div>
 
-        <div className="mb-6 relative w-full md:w-[240px]">
-          <select className="w-full h-12 px-4 rounded-xl border border-neutral-200 bg-white text-[15px] font-figtree text-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-900 appearance-none cursor-pointer hover:border-neutral-300 transition-colors">
+        <div className="mb-4 relative w-full">
+          <select className="w-full h-11 px-4 rounded-xl border border-neutral-200 bg-white text-sm font-figtree text-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-900 appearance-none cursor-pointer hover:border-neutral-300 transition-colors">
             <option value="small">Small</option>
             <option value="medium">Medium</option>
             <option value="large">Large</option>
@@ -212,7 +194,7 @@ const BundleCard = ({ bundle, index }: { bundle: any; index: number }) => {
           <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400 pointer-events-none" />
         </div>
 
-        <button className="w-full md:w-[240px] h-12 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white font-medium text-[15px] transition-colors font-figtree shadow-sm">
+        <button className="w-full h-11 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white font-medium text-sm transition-colors font-figtree shadow-sm">
           Add to Cart
         </button>
       </div>
@@ -224,7 +206,7 @@ export const QuizResults = ({ answers }: { answers: QuizState }) => {
   const bundles = getBundleRecommendations(answers)
 
   return (
-    <div className="py-8 max-w-5xl mx-auto">
+    <div className="py-8 max-w-7xl mx-auto px-6">
       {/* Success Banner */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -250,7 +232,7 @@ export const QuizResults = ({ answers }: { answers: QuizState }) => {
       </div>
 
       {/* Recommended Bundles */}
-      <div className="space-y-10 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 items-stretch">
         {bundles.map((bundle, index) => (
           <BundleCard key={bundle.id} bundle={bundle} index={index} />
         ))}
